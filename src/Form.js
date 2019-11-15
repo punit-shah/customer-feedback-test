@@ -29,9 +29,7 @@ const Form = ({ onSubmit }) => (
       required
     />
 
-    <label className="Form-label" htmlFor="Rating-input-1">
-      Rating
-    </label>
+    <p className="Form-label">Rating</p>
     <Rating name="rating" />
 
     <label className="Form-label" htmlFor="comment">
