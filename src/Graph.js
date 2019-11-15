@@ -12,7 +12,7 @@ const Graph = ({ comments }) => {
     }, 0);
 
   const data = {
-    labels: ['1', '2', '3', '4', '5'],
+    labels: ['1 star', '2 stars', '3 stars', '4 stars', '5 stars'],
     datasets: [
       {
         label: 'Ratings',
