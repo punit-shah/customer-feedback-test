@@ -2,42 +2,50 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import './Rating.css';
 
-const Rating = ({ name }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+const Rating = ({ name, readOnly, value }) => {
+  const [currentRating, setCurrentRating] = useState(null);
 
-  const onChange = event => setSelectedOption(event.target.value);
+  const onChange = event => setCurrentRating(parseInt(event.target.value, 10));
 
-  const getClassNames = option => {
-    const starRating = selectedOption && parseInt(selectedOption, 10);
-
-    return classNames([
+  const getClassNames = (thisStar, filledStars) =>
+    classNames([
       'Rating-star',
-      { 'Rating-star-filled': starRating && starRating >= option },
+      { 'Rating-star-filled': filledStars && filledStars >= thisStar },
     ]);
-  };
 
   return (
-    <div className="Rating">
-      {Array.from([1, 2, 3, 4, 5], stars => (
-        <div>
-          <input
-            className="Rating-input"
-            id={`Rating-input-${stars}`}
-            type="radio"
-            name={name}
-            value={stars}
-            checked={selectedOption === stars}
-            onChange={onChange}
-            required
-          />
-          <label
-            className={getClassNames(stars)}
-            htmlFor={`Rating-input-${stars}`}
-          >
+    <div className={classNames(['Rating', { 'Rating-readonly': readOnly }])}>
+      {Array.from([1, 2, 3, 4, 5], star => (
+        <div key={star}>
+          {readOnly ? (
+            <div className={getClassNames(star, value)} />
+          ) : (
+            <>
+              <input
+                className="Rating-input"
+                id={`Rating-input-${star}`}
+                type="radio"
+                name={name}
+                value={star}
+                checked={currentRating === star}
+                onChange={onChange}
+                required
+              />
+              <label
+                className={getClassNames(star, currentRating)}
+                htmlFor={`Rating-input-${star}`}
+              >
+                <span className="Rating-label">
+                  {`${star} star${star > 1 ? 's' : ''}`}
+                </span>
+              </label>
+            </>
+          )}
+          {readOnly && (
             <span className="Rating-label">
-              {`${stars} star${stars > 1 ? 's' : ''}`}
+              {`${value} star${value > 1 ? 's' : ''}`}
             </span>
-          </label>
+          )}
         </div>
       ))}
     </div>

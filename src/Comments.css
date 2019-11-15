@@ -1,0 +1,20 @@
+.Comments {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  border-top: solid 1px #ddd;
+}
+
+.comment {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  background: #f5fbfc;
+}
+
+.comment-name {
+  font-weight: bold;
+}
+
+.comment-body {
+  margin: 1rem 0 0;
+}

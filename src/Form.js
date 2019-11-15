@@ -4,6 +4,8 @@ import './Form.css';
 
 const Form = ({ onSubmit }) => (
   <form className="Form" onSubmit={onSubmit}>
+    <h2 className="Form-title">Leave a comment</h2>
+
     <label className="Form-label" htmlFor="name">Name</label>
     <input className="Form-field" type="text" name="name" id="name" required />
 
