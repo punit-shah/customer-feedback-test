@@ -1,0 +1,46 @@
+.Rating {
+  display: flex;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.Rating-star {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  transition: transform 0.15s ease-in;
+}
+
+.Rating-star::before {
+  content: '★';
+  display: block;
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.Rating-star-filled::before {
+  color: #ffb400;
+}
+
+.Rating-star:hover, .Rating-star:active, .Rating-star:focus {
+  transform: scale(1.2);
+}
+.Rating-input:focus + .Rating-star {
+  outline: 1px solid #999;
+}
+
+.Rating-label, .Rating-input {
+  top: 2rem;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+}

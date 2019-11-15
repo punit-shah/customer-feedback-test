@@ -1,9 +1,16 @@
 import React from 'react';
+import Form from './Form';
 import './App.css';
 
-function App() {
+const App = () => {
+  const onSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="App">
+      <h1 className="App-heading">Customer feedback</h1>
+      <Form onSubmit={onSubmit} />
     </div>
   );
 }
