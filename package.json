@@ -1,5 +1,5 @@
 {
-  "name": "checkout-customer-feedback-test",
+  "name": "customer-feedback-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
