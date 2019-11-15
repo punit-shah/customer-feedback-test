@@ -5,6 +5,10 @@
   border-top: solid 1px #fcbab0;
 }
 
+.Comments-title {
+  margin: 1rem 0 0;
+}
+
 .comment {
   margin: 1rem 0 0;
   padding: 1rem;
