@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 1rem;
   background-color: #f5fbfc;
-  width: 50%;
+  width: 100%;
 }
 
 .Form-title {
@@ -52,4 +52,10 @@
 .Form-submit:active,
 .Form-submit:focus {
   opacity: 0.8;
+}
+
+@media (min-width: 800px) {
+  .Form {
+    width: 50%;
+  }
 }

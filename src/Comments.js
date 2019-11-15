@@ -3,7 +3,7 @@ import './Comments.css';
 import Rating from './Rating';
 
 const Comments = ({ comments }) => (
-  <div className="Comments">
+  <section className="Comments">
     {comments.map(({ id, name, rating, comment }) => (
       <div className="comment" key={id}>
         <div className="comment-name">{name}</div>
@@ -11,7 +11,7 @@ const Comments = ({ comments }) => (
         <p className="comment-body">{comment}</p>
       </div>
     ))}
-  </div>
+  </section>
 );
 
 export default Comments;

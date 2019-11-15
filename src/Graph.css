@@ -1,6 +1,6 @@
 .Graph {
   padding: 1rem;
-  width: 50%;
+  width: 100%;
 }
 
 .Graph-title {
@@ -9,4 +9,10 @@
 
 .Graph-chart {
   padding: 4rem 0;
+}
+
+@media (min-width: 800px) {
+  .Graph {
+    width: 50%;
+  }
 }
