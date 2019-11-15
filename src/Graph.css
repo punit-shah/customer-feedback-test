@@ -1,0 +1,12 @@
+.Graph {
+  padding: 1rem;
+  width: 50%;
+}
+
+.Graph-title {
+  margin: 0 0 1rem;
+}
+
+.Graph-chart {
+  padding: 4rem 0;
+}

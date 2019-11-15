@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from './Form';
+import Graph from './Graph';
 import Comments from './Comments';
 import initialComments from './data/comments';
 import './App.css';
@@ -14,7 +15,7 @@ const App = () => {
       id: Date.now(),
       name: formData.get('name'),
       email: formData.get('email'),
-      rating: formData.get('rating'),
+      rating: parseInt(formData.get('rating'), 10),
       comment: formData.get('comment'),
     };
     setComments(prevComments => [newComment, ...prevComments]);
@@ -23,7 +24,10 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="App-heading">Customer feedback</h1>
-      <Form onSubmit={onSubmit} />
+      <section className="App-form-section">
+        <Form onSubmit={onSubmit} />
+        <Graph comments={comments} />
+      </section>
       <Comments comments={comments} />
     </div>
   );
