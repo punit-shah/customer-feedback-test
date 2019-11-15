@@ -1,3 +1,4 @@
+// randomly generated names used
 export default [
   {
     id: 0,
