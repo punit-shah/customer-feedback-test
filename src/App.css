@@ -1,5 +1,5 @@
 .App {
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
 .App-form-section {
@@ -9,12 +9,12 @@
 
 @media (min-width: 600px) {
   .App {
-    padding: 0 8%;
+    padding: 1rem 8%;
   }
 }
 
 @media (min-width: 800px) {
   .App {
-    padding: 0 16%;
+    padding: 1rem 16%;
   }
 }
