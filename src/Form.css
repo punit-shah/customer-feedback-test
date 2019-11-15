@@ -39,18 +39,17 @@
   display: block;
   padding: 0.75rem 1rem;
   background-color: #013a51;
-  color: #00e59e;
+  color: #fff;
   border: 0;
   border-radius: 2rem;
   font: inherit;
-  width: 10rem;
+  width: 12rem;
   margin: 0 auto;
   cursor: pointer;
-  transition: background-color 0.1s ease-in, color 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
 }
 .Form-submit:hover,
 .Form-submit:active,
 .Form-submit:focus {
-  background-color: #00e59e;
-  color: #013a51;
+  opacity: 0.8;
 }
