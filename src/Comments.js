@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Comments.css';
 import Rating from './Rating';
 
@@ -14,5 +15,16 @@ const Comments = ({ comments }) => (
     ))}
   </section>
 );
+
+Comments.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      comment: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Comments;

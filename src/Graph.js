@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
 import './Graph.css';
 
 const Graph = ({ comments }) => {
+  // gets the number of comments with the specified rating
   const getRatingCount = rating =>
     comments.reduce((count, comment) => {
       if (comment.rating === rating) {
@@ -64,6 +66,12 @@ const Graph = ({ comments }) => {
       </div>
     </div>
   );
+};
+
+Graph.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({ rating: PropTypes.number.isRequired })
+  ).isRequired,
 };
 
 export default Graph;

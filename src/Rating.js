@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import './Rating.css';
 
 const Rating = ({ readOnly, value, name }) => {
@@ -7,10 +8,10 @@ const Rating = ({ readOnly, value, name }) => {
 
   const onChange = event => setCurrentRating(parseInt(event.target.value, 10));
 
-  const getClassNames = (thisStar) =>
+  const getClassNames = star =>
     classNames([
       'Rating-star',
-      { 'Rating-star-filled': currentRating && currentRating >= thisStar },
+      { 'Rating-star-filled': currentRating && currentRating >= star },
     ]);
 
   return (
@@ -25,7 +26,7 @@ const Rating = ({ readOnly, value, name }) => {
                 className="Rating-input"
                 id={`Rating-input-${star}`}
                 type="radio"
-                name={name}
+                name={name || 'rating'}
                 value={star}
                 checked={currentRating === star}
                 onChange={onChange}
@@ -43,13 +44,19 @@ const Rating = ({ readOnly, value, name }) => {
           )}
           {readOnly && (
             <span className="Rating-label">
-              {`${value} star${value > 1 ? 's' : ''}`}
+              {`${currentRating} star${currentRating > 1 ? 's' : ''}`}
             </span>
           )}
         </div>
       ))}
     </div>
   );
+};
+
+Rating.propTypes = {
+  readOnly: PropTypes.bool,
+  value: PropTypes.number,
+  name: PropTypes.string,
 };
 
 export default Rating;

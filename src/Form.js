@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Rating from './Rating';
 import './Form.css';
 
@@ -21,5 +22,9 @@ const Form = ({ onSubmit }) => (
     <button className="Form-submit" type="submit">Submit feedback</button>
   </form>
 );
+
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default Form;
