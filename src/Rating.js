@@ -42,13 +42,13 @@ const Rating = ({ readOnly, value, name }) => {
               </label>
             </>
           )}
-          {readOnly && (
-            <span className="Rating-label">
-              {`${currentRating} star${currentRating > 1 ? 's' : ''}`}
-            </span>
-          )}
         </div>
       ))}
+      {readOnly && (
+        <span className="Rating-label">
+          {`${value} star${value > 1 ? 's' : ''}`}
+        </span>
+      )}
     </div>
   );
 };

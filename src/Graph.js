@@ -52,6 +52,7 @@ const Graph = ({ comments }) => {
           },
           ticks: {
             stepSize: 1,
+            beginAtZero: true,
           },
         },
       ],

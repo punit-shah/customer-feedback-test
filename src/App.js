@@ -9,7 +9,6 @@ const App = () => {
   const [comments, setComments] = React.useState(initialComments);
 
   const onSubmit = event => {
-    event.preventDefault();
     const formData = new FormData(event.target);
     const newComment = {
       id: Date.now(),
