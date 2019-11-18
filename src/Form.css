@@ -22,7 +22,7 @@
   background-color: #fff;
   border: solid 1px #fcbab0;
   font: inherit;
-  transition: border-color 0.1s ease-in;
+  transition: border-color 0.2s ease-in;
 }
 .Form-field:hover,
 .Form-field:active,
@@ -39,19 +39,20 @@
   display: block;
   padding: 0.75rem 1rem;
   background-color: #013a51;
-  color: #fff;
+  color: #00e59e;
   border: 0;
   border-radius: 2rem;
   font: inherit;
   width: 12rem;
   margin: 0 auto;
   cursor: pointer;
-  transition: opacity 0.1s ease-in;
+  transition: color 0.2s ease-in, background-color 0.2s ease-in;
 }
 .Form-submit:hover,
 .Form-submit:active,
 .Form-submit:focus {
-  opacity: 0.8;
+  color: #013a51;
+  background-color: #00e59e;
 }
 
 @media (min-width: 800px) {
