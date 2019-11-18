@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Form from './Form';
 import Graph from './Graph';
 import Comments from './Comments';
@@ -6,7 +6,7 @@ import initialComments from './data/comments';
 import './App.css';
 
 const App = () => {
-  const [comments, setComments] = useState(initialComments);
+  const [comments, setComments] = React.useState(initialComments);
 
   const onSubmit = event => {
     event.preventDefault();

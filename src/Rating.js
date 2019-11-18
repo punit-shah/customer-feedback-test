@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import './Rating.css';
 
-const Rating = ({ name, readOnly, value }) => {
-  const [currentRating, setCurrentRating] = useState(null);
+const Rating = ({ readOnly, value, name }) => {
+  const [currentRating, setCurrentRating] = React.useState(value);
 
   const onChange = event => setCurrentRating(parseInt(event.target.value, 10));
 
-  const getClassNames = (thisStar, filledStars) =>
+  const getClassNames = (thisStar) =>
     classNames([
       'Rating-star',
-      { 'Rating-star-filled': filledStars && filledStars >= thisStar },
+      { 'Rating-star-filled': currentRating && currentRating >= thisStar },
     ]);
 
   return (
@@ -18,7 +18,7 @@ const Rating = ({ name, readOnly, value }) => {
       {Array.from([1, 2, 3, 4, 5], star => (
         <div key={star}>
           {readOnly ? (
-            <div className={getClassNames(star, value)} />
+            <div className={getClassNames(star)} />
           ) : (
             <>
               <input
@@ -32,7 +32,7 @@ const Rating = ({ name, readOnly, value }) => {
                 required
               />
               <label
-                className={getClassNames(star, currentRating)}
+                className={getClassNames(star)}
                 htmlFor={`Rating-input-${star}`}
               >
                 <span className="Rating-label">
